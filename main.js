@@ -22,7 +22,7 @@ app.post('/api/create-file', (req,res) => {
     const fileName = req.body.fileName;
     const content = req.body.content;
 
-    exec(`echo "${content}" >> /tmp/'${fileName}'`,(error,stdout,stderr) => {
+    exec(`echo "${content}" > /tmp/'${fileName}'`,(error,stdout,stderr) => {
         if(error){
             res.status(500).send(`Error: ${error.message}`);
         }
